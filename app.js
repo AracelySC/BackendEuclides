@@ -1,5 +1,15 @@
 const XLSX = require('xlsx');
+const express = require("express");
 
+const app =express();
+app.listen(3000, () => {
+    console.log("Server running");
+});
+
+app.get("/",(req,res) =>
+{
+    res.send("hello world")
+})
 function leerExcel(ruta){
     const  excel = XLSX.readFile(ruta);
     const hojaExcel = excel.SheetNames;
@@ -38,4 +48,4 @@ function leerExcel(ruta){
     console.log(dataRedes);
 }
 
-leerExcel('DatosTarea1.xls');
+//leerExcel('DatosTarea1.xls');
