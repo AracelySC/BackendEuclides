@@ -4,40 +4,40 @@ const express = require("express");
 
 const app = express();
 
-app.get("/hello", (req, res) => {
+app.get(BASE_URL + "/hello", (req, res) => {
     res.send("hello world")
 })
 
-app.post(process.env.BASE_URL + "/aprendizaje/get", (req, res) => {
+app.post(BASE_URL + "/aprendizaje/get", (req, res) => {
     data = req.body.data;
     console.log(data);
     res.send("Prueba");
 
 })
 
-app.post(process.env.BASE_URL + "/recinto/get", (req, res) => {
+app.post(BASE_URL + "/recinto/get", (req, res) => {
     data = req.body.data;
     res.send("recinto");
 
 })
-app.post(process.env.BASE_URL + "/sexo/get", (req, res) => {
+app.post(BASE_URL + "/sexo/get", (req, res) => {
     data = req.body.data;
     res.send("sexo");
 
 })
 
-app.post(process.env.BASE_URL + "/aprendizaje2/get", (req, res) => {
+app.post(BASE_URL + "/aprendizaje2/get", (req, res) => {
     data = req.body.data;
     res.send("aprendizaje2");
 
 })
-app.post(process.env.BASE_URL + "/profesor/get", (req, res) => {
+app.post(BASE_URL + "/profesor/get", (req, res) => {
     data = req.body.data;
     res.send("profesor");
 
 })
 
-app.post(process.env.BASE_URL + "/redes/get", (req, res) => {
+app.post(BASE_URL + "/redes/get", (req, res) => {
     data = req.body.data;
     res.send("redes");
 
