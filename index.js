@@ -4,15 +4,10 @@ const XLSX = require('xlsx');
 const express = require("express");
 const bodyParser = require('body-parser');
 
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
-
-
-app.get(BASE_URL + "/hello", (req, res) => {
-    res.send("hello world")
-    console.log("hello world");
-})
 
 app.post(BASE_URL + "/aprendizaje/get", (req, res) => {
     data = req.body.data;
@@ -49,10 +44,13 @@ app.post(BASE_URL + "/redes/get", (req, res) => {
 
 })
 
-app.listen(5000, () => {
-    console.log("Server running");
-});
+app.listen(port);
 
+app.get("/hello", (req, res) => {
+    res.send("hello world")
+    console.log("hello world");
+})
+console.log(`Server running in the Port: ${port}`);
 module.exports= app;
 
 function leerExcel(ruta) {
