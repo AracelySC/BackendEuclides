@@ -49,7 +49,7 @@ app.post(BASE_URL + "/redes/get", (req, res) => {
 
 })
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log("Server running");
 });
 
