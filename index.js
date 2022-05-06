@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 
 
-app.get(BASE_URL + "/hello", (req, res) => {
+app.get("/hello", (req, res) => {
     res.send("hello world")
     console.log("hello world");
 })
