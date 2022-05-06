@@ -1,17 +1,54 @@
+BASE_URL = 'https://vercel.com/aracelysc/backend-euclides';
 const XLSX = require('xlsx');
 const express = require("express");
 
-const app =express();
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("hello world")
+})
+
+app.post(process.env.BASE_URL + "/aprendizaje/get", (req, res) => {
+    data = req.body.data;
+    console.log(data);
+    res.send("Prueba");
+
+})
+
+app.post(process.env.BASE_URL + "/recinto/get", (req, res) => {
+    data = req.body.data;
+    res.send("recinto");
+
+})
+app.post(process.env.BASE_URL + "/sexo/get", (req, res) => {
+    data = req.body.data;
+    res.send("sexo");
+
+})
+
+app.post(process.env.BASE_URL + "/aprendizaje2/get", (req, res) => {
+    data = req.body.data;
+    res.send("aprendizaje2");
+
+})
+app.post(process.env.BASE_URL + "/profesor/get", (req, res) => {
+    data = req.body.data;
+    res.send("profesor");
+
+})
+
+app.post(process.env.BASE_URL + "/redes/get", (req, res) => {
+    data = req.body.data;
+    res.send("redes");
+
+})
+
 app.listen(3000, () => {
     console.log("Server running");
 });
 
-app.get("/",(req,res) =>
-{
-    res.send("hello world")
-})
-function leerExcel(ruta){
-    const  excel = XLSX.readFile(ruta);
+function leerExcel(ruta) {
+    const excel = XLSX.readFile(ruta);
     const hojaExcel = excel.SheetNames;
     // console.log(hojaExcel);
 
@@ -26,21 +63,21 @@ function leerExcel(ruta){
     const dataAll = XLSX.utils.sheet_to_json(excel.Sheets[estiloSexoPromedioRecinto]);
     const dataProfesores = XLSX.utils.sheet_to_json(excel.Sheets[profesores]);
     const dataRedes = XLSX.utils.sheet_to_json(excel.Sheets[redes]);
-    
+
     // distancia1= criterioRegistro   - CriterioUsuario
 
     // distancia2= criterioRegistro2   - CriterioUsuario2
-    
+
     // distancia1= Math.pow(distancia1,2)
     // distancia2= Math.pow(distancia2,2)
-    
+
     // DistanciaTotal= distancia1 + distancia 2
-    
+
     // La distancia total es la menor de todas? Si, entonces la Guardo.
-    
+
     // No? Entonces sigo iterando los registros
-    
-    
+
+
 
     console.log(dataRecintoEstilo);
     console.log(dataAll);
