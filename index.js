@@ -1,4 +1,5 @@
-const BASE_URL = 'https://vercel.com/aracelysc/backend-euclides';
+const BASE_URL = 'https://backend-euclides.vercel.app';
+
 const XLSX = require('xlsx');
 const express = require("express");
 
