@@ -6,6 +6,7 @@ const app = express();
 
 app.get(BASE_URL + "/hello", (req, res) => {
     res.send("hello world")
+    console.log("hello world");
 })
 
 app.post(BASE_URL + "/aprendizaje/get", (req, res) => {
