@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ef277da2-4068-4822-b644-f92d95816a8d/resourceGroups/DefaultResourceGroup-CCAN/providers/Microsoft.Web/sites/euclides-backend",
+    "appService.deploySubpath": "."
+}
